@@ -16,7 +16,7 @@
 __Step 1:__ To work on this codebase locally, use one of the following:
 * Git ssh from command line: `$ git clone git@github.com:nguyenvinh2/201d56Project.git`
 * Git http from command line: `$ git clone https://github.com/nguyenvinh2/201d56Project.git`
-* Download zip: [Download Link](https://github.com/nguyenvinh2/201d56Project/archive/master.zip) and then unzip into your work directory.
+* Download zip [here](https://github.com/nguyenvinh2/201d56Project/archive/master.zip) and then unzip into your work directory.
 
 __Step 2:__ Change directory into the local copy/repo: `$ cd 201d56Project`
 
