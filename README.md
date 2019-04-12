@@ -14,11 +14,19 @@
 
 ## Setup Instructions
 
-## Workflow 
+## Workflow
 
 ### User Stories
 
 ### MVP
+Minimum Viable Product will consist of the following:
+* 3 completed HTML pages
+    * Landing Page
+    * Game Page
+    * About Us Page
+* CSS/Styling completed for each page
+* Javascript logic done for the game page
+* All necessary images downloaded/hotlinked
 
 ### Stretch Goals
 
@@ -33,4 +41,3 @@
 ### Git Plan
 
 # Wire Frame
-
