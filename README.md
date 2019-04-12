@@ -19,7 +19,7 @@
 ### User Stories
 As a user, I want a game that requires the use of memory.
 
-As a user, I want the game to help to know my classmates more.
+As a user, I want a game that will help me get to know my classmates more.
 
 As a user, I want a game that only requires me to click and that is it.
 
