@@ -33,7 +33,7 @@ As a developer, I want to use DOMs to imitate cards that will be used to create 
 
 As a developer, I want the cards to have pictures of classmates on the back so to make the game relatable.
 
-As a developer, I want the game to display infomration about the user's classmate if a match is made so that the user can learn a little about their fellow classmates.
+As a developer, I want the game to display information about the user's classmate if a match is made so that the user can learn a little about their fellow classmates.
 
 As a developer, I want to demonstrate use of localStorage by saving user scores after page close.
 
