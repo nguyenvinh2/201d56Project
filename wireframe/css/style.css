@@ -1,0 +1,86 @@
+/* ENTIRE PAGE */
+*
+{
+  font-family: sans-serif;
+}
+html
+{
+  background-color: rgb(78, 78, 78);
+}
+/* HEADER */
+header
+{
+  background: rgb(66, 110, 66);
+  height: 100px;
+  width: 75%;
+  margin: 0 auto;
+}
+
+nav
+{
+  width: 75%;
+  margin: 0px auto;
+}
+nav li
+{
+  display: inline-block;
+  margin: 45px auto;
+  margin-left: 20%;
+  font-size: 16pt;
+  font-family: sans-serif;
+  border: 1px solid black;
+  padding: 5px;
+}
+a
+{
+  text-decoration: none;
+  color: rgb(0, 0, 0);  
+}
+a:hover
+{
+  background-color: rgb(70, 85, 166);
+}
+h1
+{
+  margin: 0 auto;
+  margin-bottom: 25px;
+  margin-top: 25px;
+  text-align: center;
+  padding: 10px;
+  /* font-family: sans-serif; */
+  font-size: 24pt;
+  font-weight:  bolder;
+}
+
+.game-board
+{
+  margin: 0 auto;
+  background-color: rgb(66, 110, 66);
+  width: 75%;
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+}
+.game-board p
+{
+  width: 75%;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 14pt;
+  border: 1px black solid;
+  padding: 25px;
+}
+.game-card
+{
+  margin-left: 6%;
+}
+
+/* FOOTER */
+footer
+{
+  /* clear: both; */
+  background: rgb(66, 110, 66);
+  height: 100px;
+  width: 75%;
+  margin: 0 auto;
+}
