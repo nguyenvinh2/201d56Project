@@ -39,6 +39,7 @@ function Score(score,userName){
   //sets score values in localStorage
   this.toLocalStorage = function(){
     //top 5 scores exists
+    this.tmpPlaceHolder = null;
     if(localStorage.length >= 5){
       this.scoresArr = this.fromLocalStorage();
       //finds the index in which this.score is greater than and temporarily stores it in tmpPlaceHolder
