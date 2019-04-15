@@ -5,7 +5,7 @@ var firstNameArr = ['charlie','cristian','david','demi','devon','jhia','john','j
 var lastNameArr = ['winters','restrepo','marchante','hamm','hackley','turner','winters','fernandez','ketter','eivy','porter','mahoney','guesswho','williams','thomas','tynan','bronson','huba','hamm','chu','busch','nguyen','gao','chidrome'];
 
 function Card(firstName,lastName,value){
-  this.filePath = '/assets/facePics/' + firstName + '.jpeg';
+  this.filePath = 'assets/facePics/' + firstName + '.jpeg';
   this.firstName = firstName;
   this.lastName = lastName;
   this.value = value;

@@ -17,7 +17,7 @@ GameBoard.prototype.makeShuffledArray = function() {
 
 // Method to render the game board onto the html
 GameBoard.prototype.renderGameBoard = function () {
-  var table = document.getElementById('gameBoardTable');
+  var table = document.getElementById('game-board-table');
   var arrayIndex = 0;
   for (let i = 0; i < this.size; i++) {
     var newRow = document.createElement('tr');
@@ -34,7 +34,7 @@ GameBoard.prototype.renderGameBoard = function () {
 
       newCardDiv.setAttribute('class', 'card');
       cardFrontDiv.setAttribute('class', 'front');
-      imgFront.setAttribute('src', '../assets/cf-logo-shield.jpeg');
+      imgFront.setAttribute('src', 'assets/cf-logo-shield.jpeg');
       imgFront.setAttribute('width', this.imgDim);
       imgFront.setAttribute('height', this.imgDim);
       imgFront.setAttribute('alt', 'logo');
