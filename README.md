@@ -53,23 +53,30 @@ As a developer, I want to store my code uniformily into multiple js files to mak
 Minimum Viable Product will consist of the following:
 * Complete HTML pages
     * Landing/Home page
-    * Game page
+    * Game page/Game board
     * About Us page
+* Landing/Home Page
+    * Provide clear instructions for the player
+* About us page
+    * Display information about the dev team
 * Consistent CSS theme for each page
+* Animate card flipping in CSS
 * All necessary images downloaded/hotlinked
 * Javascript logic working for the game page
     * Randomize cards
     * Render table
     * Detect mouse clicks
-    * Literally, the game actually works
-* Allow saving of each completed game score in to local storage
+    * Keep track if first card flipped vs second card flipped
+* Present score (number of wrong guesses) at the end
+* Allow the player to enter their name at end of game
+* Allow saving of each completed game score to local storage
 
 ### Stretch Goals
-* Animate card flipping
-* Animate successful match
-* Animate failure match
+* Animate successful match animation/flair
+* Animate failure match animation/flair
 * Add difficulty setting
 * Allow saving of an incomplete game
+* Allow uploading of new cards
 
 ## Group Work Agreement
 
