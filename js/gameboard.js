@@ -17,7 +17,7 @@ GameBoard.prototype.makeShuffledArray = function() {
 
 // Method to render the game board onto the html
 GameBoard.prototype.renderGameBoard = function () {
-  var table = document.getElementById('gameBoard');
+  var table = document.getElementById('gameBoardTable');
   var arrayIndex = 0;
   for (let i = 0; i < this.size; i++) {
     var newRow = document.createElement('tr');
@@ -25,32 +25,38 @@ GameBoard.prototype.renderGameBoard = function () {
       var card = this.shuffledArray[arrayIndex++];
       var newCol = document.createElement('td');
       var newLabel = document.createElement('label');
+      var newCardDiv = document.createElement('div');
+      var cardFrontDiv = document.createElement('div');
+      var cardBackDiv = document.createElement('div');
+      var imgFront = document.createElement('img');
+      var imgBack = document.createElement('img');
       var newInput = document.createElement('input');
-      var outerDiv = document.createElement('div');
-      var imgDivTop = document.createElement('div');
-      var imgDivBottom = document.createElement('div');
-      var cardTopImg = document.createElement('img');
-      var cardBottomImg = document.createElement('img');
 
-      newLabel.setAttribute('id',
+      newCardDiv.setAttribute('class', 'card');
+      cardFrontDiv.setAttribute('class', 'front');
+      imgFront.setAttribute('src', '../assets/cf-logo-shield.jpeg');
+      imgFront.setAttribute('width', this.imgDim);
+      imgFront.setAttribute('height', this.imgDim);
+      imgFront.setAttribute('alt', 'logo');
+      imgFront.setAttribute('title', 'logo');
+      cardBackDiv.setAttribute('class', 'back');
+      imgBack.setAttribute('src', card.filePath);
+      imgBack.setAttribute('width', this.imgDim);
+      imgBack.setAttribute('height', this.imgDim);
+      imgBack.setAttribute('alt', card.firstName + card.lastName);
+      imgBack.setAttribute('title', card.firstName + card.lastName);
+      newInput.setAttribute('id',
                             Math.floor(Math.random() * 1000) + card.value);
-      newLabel.setAttribute('value', card.value);
-      newInput.setAttribute('type', 'checkbox');
-      outerDiv.setAttribute('class', 'card');
-      imgDivTop.setAttribute('class', 'front');
-      imgDivBottom.setAttribute('class', 'bottom');
-      cardTopImg.setAttribute('src', '../assets/cf-logo-shield.jpeg');
-      cardTopImg.setAttribute('width', this.imgDim);
-      cardBottomImg.setAttribute('src', card.filePath);
-      cardBottomImg.setAttribute('width', this.imgDim);
+      newInput.setAttribute('name', card.value);
+      newInput.setAttribute('value', card.value);
 
-      imgDivTop.appendChild(cardTopImg);
-      imgDivBottom.appendChild(cardBottomImg);
-      outerDiv.appendChild(imgDivTop);
-      outerDiv.appendChild(imgDivBottom);
-      newLabel.appendChild(newInput);
-      newLabel.appendChild(outerDiv);
+      cardFrontDiv.appendChild(imgFront);
+      cardBackDiv.appendChild(imgBack);
+      newCardDiv.appendChild(cardFrontDiv);
+      newCardDiv.appendChild(cardBackDiv);
+      newLabel.appendChild(newCardDiv);
       newCol.appendChild(newLabel);
+      newCol.appendChild(newInput);
       newRow.appendChild(newCol);
     }
     table.appendChild(newRow);
