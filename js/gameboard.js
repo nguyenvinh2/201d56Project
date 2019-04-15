@@ -11,7 +11,6 @@ var GameBoard = function() {
 // Method to build two randomized arrays built from the gameboard's deck
 GameBoard.prototype.makeShuffledArray = function() {
   var array = shuffleArray(this.deck).slice(0, (this.size * this.size) / 2);
-  console.log('length of temp array', array.length);
   this.shuffledArray = array.concat(array.slice());
   this.shuffledArray = shuffleArray(this.shuffledArray);
 };
