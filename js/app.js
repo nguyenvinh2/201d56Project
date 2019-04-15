@@ -18,3 +18,28 @@ for(let i = 0; i < firstNameArr.length; i++){
   new Card(firstNameArr[i],lastNameArr[i],i);
 }
 
+function Score(score,userName){
+  this.score = score;
+  this.userName = userName;
+  this.scoresArr = [];
+  this.fromLocalStorage = function(){
+    if(localStorage.length > 1)
+    {
+      return JSON.parse(localStorage.getItem('scores'));
+    }
+  };
+
+  this.toLocalStorage = function(){
+    if(localStorage.length >= 5){
+      this.scoresArr = this.fromLocalStorage();
+      for(let i = 0; i < this.scoresArr.length; i++){
+        if(this.score > this.scoresArr[i].score){
+          this.scoresArr.splice(i, 1, this.score);
+        }
+      }
+    }
+    else
+      this.scoresArr.push(this.score);
+    localStorage.scores = JSON.stringify(this.scoresArr);
+  };
+}
