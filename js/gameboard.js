@@ -45,8 +45,7 @@ GameBoard.prototype.renderGameBoard = function () {
       imgBack.setAttribute('height', this.imgDim);
       imgBack.setAttribute('alt', card.firstName + card.lastName);
       imgBack.setAttribute('title', card.firstName + card.lastName);
-      newInput.setAttribute('id',
-                            Math.floor(Math.random() * 1000) + card.value);
+      newInput.setAttribute('id', Math.floor(Math.random() * 1000) + card.value);
       newInput.setAttribute('name', card.value);
       newInput.setAttribute('value', card.value);
 
@@ -92,5 +91,5 @@ var shuffleArray = function(inputArray) {
 var gb = new GameBoard();
 gb.deck = allCards;
 gb.size = 6; // Use even numbers for now
-gb.makeShuffledArray()
+gb.makeShuffledArray();
 gb.renderGameBoard();
