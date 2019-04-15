@@ -45,7 +45,8 @@ GameBoard.prototype.renderGameBoard = function () {
       imgBack.setAttribute('height', this.imgDim);
       imgBack.setAttribute('alt', card.firstName + card.lastName);
       imgBack.setAttribute('title', card.firstName + card.lastName);
-      newInput.setAttribute('id', Math.floor(Math.random() * 1000) + card.value);
+      newInput.setAttribute('type', 'checkbox');
+      newInput.setAttribute('id', Math.floor(Math.random() * 10000) + card.value);
       newInput.setAttribute('name', card.value);
       newInput.setAttribute('value', card.value);
 
