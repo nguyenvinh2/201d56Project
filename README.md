@@ -56,7 +56,7 @@ Minimum Viable Product will consist of the following:
     * Game page/Game board
     * About Us page
 * Landing/Home Page
-    * Instructions
+    * Provide clear instructions for the player
 * About us page
     * Display information about the dev team
 * Consistent CSS theme for each page
@@ -68,7 +68,7 @@ Minimum Viable Product will consist of the following:
     * Detect mouse clicks
     * Keep track if first card flipped vs second card flipped
 * Present score (number of wrong guesses) at the end
-* Allow user to enter their name at end of game
+* Allow the player to enter their name at end of game
 * Allow saving of each completed game score to local storage
 
 ### Stretch Goals
@@ -76,6 +76,7 @@ Minimum Viable Product will consist of the following:
 * Animate failure match animation/flair
 * Add difficulty setting
 * Allow saving of an incomplete game
+* Allow uploading of new cards
 
 ## Group Work Agreement
 
