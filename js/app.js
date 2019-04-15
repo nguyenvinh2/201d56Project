@@ -6,7 +6,7 @@ var lastNameArr = ['winters','restrepo','marchante','hamm','hackley','turner','w
 
 function Card(firstName,lastName,value)
 {
-  this.filePath = '../assets/facePics/' + firstName + '.jpeg';
+  this.filePath = '/assets/facePics/' + firstName + '.jpeg';
   this.firstName = firstName;
   this.lastName = lastName;
   this.value = value;
