@@ -87,7 +87,7 @@ Minimum Viable Product will consist of the following:
     * Resets if option select does not match, advances if matches
     * Continues until game finishes
 * Allow saving of each completed game score in to local storage
-    * Keep track if first card flipped vs second card flipped
+* Keep track if first card flipped vs second card flipped
 * Present score (number of wrong guesses) at the end
 * Allow the player to enter their name at end of game
 * Allow saving of each completed game score to local storage
@@ -100,6 +100,10 @@ Minimum Viable Product will consist of the following:
 * Add option to play again upon completion
 * Modal pop-up if revealed game card is clicked on
 * Allow uploading of new cards
+
+### Page and Logic Flow
+
+![Flow](assets/Flow.jpg)
 
 ### Wire Frame
 
