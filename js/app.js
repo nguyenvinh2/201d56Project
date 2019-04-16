@@ -3,10 +3,10 @@
 var allCards = [];
 
 //holds all first names of classmates in the pictures
-var firstNameArr = ['charlie','cristian','david','demi','devon','jhia','john','jorie','kent','lena','levi','liz','matt','osunkwo','paula','peter','robert','roger','sam','stephen','tim','vinh','yuan','paolo'];
+var firstNameArr = ['charlie','cristian','david','demi','devon','jhia','john','jorie','kent','lena','levi','liz','matt','williams','paula','peter','robert','roger','sam','stephen','tim','vinh','yuan','paolo'];
 
 //holds all last names of classmates in the pictures
-var lastNameArr = ['winters','restrepo','marchante','hamm','hackley','turner','winters','fernandez','ketter','eivy','porter','mahoney','guesswho','williams','thomas','tynan','bronson','huba','hamm','chu','busch','nguyen','gao','chidrome'];
+var lastNameArr = ['winters','restrepo','marchante','hamm','hackley','turner','winters','fernandez','ketter','eivy','porter','mahoney','guesswho','osunkwo','thomas','tynan','bronson','huba','hamm','chu','busch','nguyen','gao','chidrome'];
 
 //Card object to be handled
 function Card(firstName,lastName,value){
