@@ -22,9 +22,11 @@ GameBoard.prototype.renderGameBoard = function () {
   for (let i = 0; i < this.size; i++) {
     var newRow = document.createElement('tr');
     for (let j = 0; j < this.size; j++) {
+      var id = i*this.size + j;
       var card = this.shuffledArray[arrayIndex++];
       var newCol = document.createElement('td');
       var newLabel = document.createElement('label');
+      newLabel.setAttribute('for', `${id}`);
       var newCardDiv = document.createElement('div');
       var cardFrontDiv = document.createElement('div');
       var cardBackDiv = document.createElement('div');
@@ -45,9 +47,9 @@ GameBoard.prototype.renderGameBoard = function () {
       imgBack.setAttribute('height', this.imgDim);
       imgBack.setAttribute('alt', card.firstName + card.lastName);
       imgBack.setAttribute('title', card.firstName + card.lastName);
-      newInput.setAttribute('type', 'checkbox');
-      newInput.setAttribute('id', Math.floor(Math.random() * 10000) + card.value);
-      newInput.setAttribute('name', card.value);
+      newInput.setAttribute('type', 'radio');
+      newInput.setAttribute('id', `${id}`);
+      newInput.setAttribute('name', 'card');
       newInput.setAttribute('value', card.value);
 
       cardFrontDiv.appendChild(imgFront);
@@ -91,6 +93,6 @@ var shuffleArray = function(inputArray) {
 // The following for testing purposes
 var gb = new GameBoard();
 gb.deck = allCards;
-gb.size = 6; // Use even numbers for now
+gb.size = 4; // Use even numbers for now
 gb.makeShuffledArray();
 gb.renderGameBoard();
