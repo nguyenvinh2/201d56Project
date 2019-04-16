@@ -1,7 +1,16 @@
 'use strict';
 
-function Game() {
+function Game(board) {
+  // eslint-disable-next-line no-undef
+  this.userScore = new Score(0, 'Vinh');
   this.userSelects = [];
+  this.cardsLeft = board.size*board.size;
+  this.createBoard = function () {
+    // eslint-disable-next-line no-undef
+    board.deck = allCards;
+    board.makeShuffledArray();
+    board.renderGameBoard();
+  };
   this.executeOrder66 = function () {
     var returnedOption = document.querySelector('input[name=card]:checked');
     if (returnedOption !== null) {
@@ -16,6 +25,9 @@ function Game() {
         }
         this.userSelects = [];
       }
+      if (this.cardsLeft === 0) {
+        alert(`Congrats, you won! Score: ${this.userScore.score}`);
+      }
       formReset();
     }
   };
@@ -26,12 +38,15 @@ function Game() {
   };
 
   this.matchSuccess = function () {
+    console.log(this.cardsLeft);
+    this.cardsLeft -= 2;
   };
 
   this.matchFailure = function (cardOne, cardTwo) {
     setTimeout(this.resetFlip, 1500, cardOne, cardTwo);
     cardOne.removeAttribute('disabled');
     cardTwo.removeAttribute('disabled');
+    this.userScore.score++;
   };
 
   this.resetFlip = function (cardOne, cardTwo) {
@@ -53,7 +68,9 @@ function Game() {
   };
 }
 
-var gaming = new Game();
+// eslint-disable-next-line no-undef
+var gaming = new Game(new GameBoard(2));
+gaming.createBoard();
 window.onload = function () {
   formReset();
   triggerEvents(true);

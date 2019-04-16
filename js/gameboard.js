@@ -1,10 +1,10 @@
 'use strict';
 
 // GameBoard constructor
-var GameBoard = function() {
-  this.size = 0;
+var GameBoard = function(sizeSet) {
+  this.size = sizeSet;
   this.deck = [];
-  this.imgDim = '125';
+  this.imgDim = '100%';
   this.shuffledArray = [];
 };
 
@@ -22,11 +22,10 @@ GameBoard.prototype.renderGameBoard = function () {
   for (let i = 0; i < this.size; i++) {
     var newRow = document.createElement('tr');
     for (let j = 0; j < this.size; j++) {
-      var id = i*this.size + j;
       var card = this.shuffledArray[arrayIndex++];
       var newCol = document.createElement('td');
       var newLabel = document.createElement('label');
-      newLabel.setAttribute('for', `${id}`);
+      newLabel.setAttribute('for', `${arrayIndex}`);
       var newCardDiv = document.createElement('div');
       var cardFrontDiv = document.createElement('div');
       var cardBackDiv = document.createElement('div');
@@ -89,10 +88,3 @@ var shuffleArray = function(inputArray) {
 
   return array;
 };
-
-// The following for testing purposes
-var gb = new GameBoard();
-gb.deck = allCards;
-gb.size = 4; // Use even numbers for now
-gb.makeShuffledArray();
-gb.renderGameBoard();
