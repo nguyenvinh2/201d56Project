@@ -1,56 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>About Us</title>
-</head>
-<body>
-  <header>
-  </header>
-  <h1>About Us</h1>
-  <table>
-    <tr>
-      <td><img src="assets/facePics/matt.jpeg" alt="Matt Burger" title="Matt Burger" width="100px" height="100px" /></td>
-      <td>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/bgm_switch.css">
+    <title>About Us</title>
+  </head>
+  <body>
+    <header>
+      <iframe src="assets/audio/silence.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
+      <audio id="background_music" autoplay loop>
+	<source src="assets/audio/Game-Menu_v001.mp3" />
+      </audio>
+      <a href="index.html"><h2>Code Pairs</h2></a>
+      <nav>
 	<ul>
-	  <li><h3>Matt Burger</h3></li>
-	  <li>Software Developer</li>
-	  <li></li>
-	  <li>matt.burger1@outlook.com</li>
-	  <li>linkedin.com/in/matt-burger/</li>
-	  <li>github.com/mattburger</li>
+	  <li>Hi Scores</li>
+	  <li><a href="about.html">About</a></li>
+	  <li>
+	    BGM
+	    <label class="bgm_switch">
+	      <input id="bgm_toggle" type="checkbox" checked>
+	      <span class="slider round"></span>
+	    </label>
+	  </li>
 	</ul>
-      </td>
-    </tr>
-    <tr>
-      <td><img src="assets/facePics/stephen.jpeg" alt="Matt Burger" title="Matt Burger" width="100px" height="100px" /></td>
-      <td>
-	<ul>
-	  <li><h3>Stephen Chu</h3></li>
-	  <li>Software Developer</li>
-	  <li>I like long walks on the beach under the clear moonlit sky. I also like watching cooking shows and ugly crying while watching romcoms.</li>
-	  <li>stephen.chu530@gmail.com</li>
-	  <li>linkedin.com/in/stephenchu530</li>
-	  <li>github.com/stephenchu530</li>
-	</ul>
-      </td>
-    </tr>
-    <tr>
-      <td><img src="assets/facePics/vinh.jpeg" alt="Matt Burger" title="Matt Burger" width="100px" height="100px" /></td>
-      <td>
-	<ul>
-	  <li><h3>Vinh Nguyen</h3></li>
-	  <li>Software Developer</li>
-	  <li>Vinh Nguyen has a background in Mechanical, Nuclear, and
-Electrical Engineering alongside Software Development. After completing his studies at the University of Washington, he decided to pursue Software Development to complement his existing skills and knowledge and is now a proud Amazonian.</li>
-	  <li>nguyenv2@outlook.com</li>
-	  <li>linkedincom/in/vinh-h-nguyen</li>
-	  <li>github.com/nguyenvinh2</li>
-	</ul>
-      </td>
-    </tr>
-  </table>
-</body>
+      </nav>
+    </header>
+    <main>
+      <h1>About Us</h1>
+      <table>
+	<tr>
+	  <td><img src="assets/facePics/matt.jpeg" alt="Matt Burger" title="Matt Burger" width="100px" height="100px" /></td>
+	  <td>
+	    <ul>
+	      <li><h3>Matt Burger</h3></li>
+	      <li>Software Developer</li>
+	      <li></li>
+	      <li>matt.burger1@outlook.com</li>
+	      <li>linkedin.com/in/matt-burger/</li>
+	      <li>github.com/mattburger</li>
+	    </ul>
+	  </td>
+	</tr>
+	<tr>
+	  <td><img src="assets/facePics/stephen.jpeg" alt="Matt Burger" title="Matt Burger" width="100px" height="100px" /></td>
+	  <td>
+	    <ul>
+	      <li><h3>Stephen Chu</h3></li>
+	      <li>Software Developer</li>
+	      <li>I like long walks on the beach under the clear moonlit sky. I also like watching cooking shows and ugly crying while watching romcoms.</li>
+	      <li>stephen.chu530@gmail.com</li>
+	      <li>linkedin.com/in/stephenchu530</li>
+	      <li>github.com/stephenchu530</li>
+	    </ul>
+	  </td>
+	</tr>
+	<tr>
+	  <td><img src="assets/facePics/vinh.jpeg" alt="Matt Burger" title="Matt Burger" width="100px" height="100px" /></td>
+	  <td>
+	    <ul>
+	      <li><h3>Vinh Nguyen</h3></li>
+	      <li>Software Developer</li>
+	      <li>Vinh Nguyen has a background in Mechanical, Nuclear, and
+		Electrical Engineering alongside Software Development. After completing his studies at the University of Washington, he decided to pursue Software Development to complement his existing skills and knowledge and is now a proud Amazonian.</li>
+	      <li>nguyenv2@outlook.com</li>
+	      <li>linkedincom/in/vinh-h-nguyen</li>
+	      <li>github.com/nguyenvinh2</li>
+	    </ul>
+	  </td>
+	</tr>
+      </table>
+    </main>
+    <script src="js/sound.js"></script>
+  </body>
 </html>

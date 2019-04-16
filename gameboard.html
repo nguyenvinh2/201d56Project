@@ -1,27 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Gameboard</title>
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <form id="game">
-    <table id="game-board-table">
-    </table>
-  </form>
-  <div id="card-modal">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gameboard</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/bgm_switch.css">
+  </head>
+  <body>
+    <header>
+      <iframe src="assets/audio/silence.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
+      <audio id="background_music" autoplay loop>
+	<source src="assets/audio/Game-Menu_v001.mp3" />
+      </audio>
+      <a href="index.html"><h2>Code Pairs</h2></a>
+      <nav>
+	<ul>
+	  <li>Hi Scores</li>
+	  <li><a href="about.html">About</a></li>
+	  <li>
+	    BGM
+	    <label class="bgm_switch">
+	      <input id="bgm_toggle" type="checkbox" checked>
+	      <span class="slider round"></span>
+	    </label>
+	  </li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      <form id="game">
+	<table id="game-board-table">
+	</table>
+      </form>
+        <div id="card-modal">
     <div id="inner-modal">
       <h1 id="title-modal"></h1>
       <img id="img-modal">
       <p id="desc-modal"></p>
     </div>
-  </div>
-  <script src="js/app.js"></script>
-  <script src="js/gameboard.js"></script>
-  <script src="js/game.js"></script>
-</body>
+      </div>
+    </main>
+    <script src="js/app.js"></script>
+    <script src="js/gameboard.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/sound.js"></script>
+  </body>
 </html>
