@@ -1,49 +1,135 @@
-td {
-  margin-left: 200px;
-}
 
-.card {
-  font-size: 25px;
-  text-align: left;
-  width: 100px;
-  transition: transform .75s;
-  transform-style: preserve-3d;
-  height: 100%;
-}
-
-.transform {
-  transform: rotateY(180deg);
+/* Cards array */
+table {
+  display: cell;
+  margin-left: auto;
+  margin-right: auto;
+  border-spacing: 10px;
+  border-collapse: separate;
 }
 
 input {
   display: none;
 }
+/* ----------------- */
 
-.front{
+/* Flip Container, W3School Style, adjusted for clicking */
+.card {
+  font-size: 25px;
+  text-align: left;
+  transition: transform .75s;
+  transform-style: preserve-3d;
+  height: 150px;
+  width: 150px;
+}
+
+.front:hover{
+  transform: translateY(4px);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .15);
+}
+
+.front {
   position: absolute;
   width: 100%;
   height: 100%;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .15);
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, .15);
   border-radius: 15px;
-  background-color: whitesmoke;
+  background-color: rgba(245, 245, 245);
+  opacity: .85;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
-  opacity: .85;
   z-index: 2;
 }
 
-.back{
+.back {
   position: absolute;
   transform: rotateY(180deg);
   width: 100%;
   height: 100%;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .15);
   border-radius: 15px;
-  background-color: whitesmoke;
+  background-color: rgb(245, 245, 245);
   opacity: .85;
   z-index: 1;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
 }
+
+.transform {
+  transform: rotateY(180deg);
+}
+/* ----------------------- */
+
+/* Modal Box, W3School Style */
+#card-modal {
+  z-index: 1;
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(119, 136, 153, .7);
+  top: 0%;
+}
+
+#inner-modal {
+  position: relative;
+  margin: 5% auto;
+  padding: 15px;
+  background-color: whitesmoke;
+  border-radius: 15px;
+  width: 25%;
+  text-align: center;
+  animation: expand .7s;
+}
+
+#inner-modal h1 {
+  margin: 5px;
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+#inner-modal img {
+  width: 100%;
+}
+
+#inner-modal p {
+  font-size: 15px;
+  margin: 5px;
+}
+
+@keyframes expand {
+  0% {
+    transform:scale(.1);
+    opacity:0;
+  }
+  100% {
+    transform:scale(1);
+    opacity:1;
+  }
+}
+
+/* .first-quad {
+  animation: firstQuad 5s infinite;
+} */
+
+/* 
+@keyframes firstQuad {
+  0% {
+    transform: translateX(-50px) translateY(50px);
+  }
+  25% {
+    transform: translateX(50px) translateY(50px);
+  }
+  50% {
+    transform: translateX(50px) translateY(-50px);
+  }
+  100% {
+    transform: translateX(-50px) translateY(-50px);
+  }
+}
+
+ */
+
+

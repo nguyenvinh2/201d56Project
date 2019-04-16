@@ -1,10 +1,10 @@
 'use strict';
 
 // GameBoard constructor
-var GameBoard = function() {
-  this.size = 0;
+var GameBoard = function(sizeSet) {
+  this.size = sizeSet;
   this.deck = [];
-  this.imgDim = '125';
+  this.imgDim = '100%';
   this.shuffledArray = [];
 };
 
@@ -25,14 +25,23 @@ GameBoard.prototype.renderGameBoard = function () {
       var card = this.shuffledArray[arrayIndex++];
       var newCol = document.createElement('td');
       var newLabel = document.createElement('label');
+      newLabel.setAttribute('for', `${arrayIndex}`);
       var newCardDiv = document.createElement('div');
       var cardFrontDiv = document.createElement('div');
       var cardBackDiv = document.createElement('div');
       var imgFront = document.createElement('img');
       var imgBack = document.createElement('img');
       var newInput = document.createElement('input');
-
       newCardDiv.setAttribute('class', 'card');
+      // if(i<this.size/2 && j<this.size/2) {
+      //   newCardDiv.setAttribute('class','first-quad');
+      // } else if(i<this.size/2 && j >= this.size/2) {
+      //   newCardDiv.setAttribute('class','second-quad');
+      // } else if(i >= this.size/2 && j < this.size/2) {
+      //   newCardDiv.setAttribute('class','third-quad');
+      // } else {
+      //   newCardDiv.setAttribute('class','fourth-quad');
+      // }
       cardFrontDiv.setAttribute('class', 'front');
       imgFront.setAttribute('src', 'assets/cf-logo-shield.jpeg');
       imgFront.setAttribute('width', this.imgDim);
@@ -45,9 +54,9 @@ GameBoard.prototype.renderGameBoard = function () {
       imgBack.setAttribute('height', this.imgDim);
       imgBack.setAttribute('alt', card.firstName + card.lastName);
       imgBack.setAttribute('title', card.firstName + card.lastName);
-      newInput.setAttribute('type', 'checkbox');
+      newInput.setAttribute('type', 'radio');
+      newInput.setAttribute('name', 'card');
       newInput.setAttribute('id', arrayIndex);
-      newInput.setAttribute('name', 'picture');
       newInput.setAttribute('value', card.value);
 
       cardFrontDiv.appendChild(imgFront);
@@ -87,10 +96,3 @@ var shuffleArray = function(inputArray) {
 
   return array;
 };
-
-// The following for testing purposes
-var gb = new GameBoard();
-gb.deck = allCards;
-gb.size = 6; // Use even numbers for now
-gb.makeShuffledArray();
-gb.renderGameBoard();
