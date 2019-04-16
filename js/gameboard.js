@@ -48,8 +48,8 @@ GameBoard.prototype.renderGameBoard = function () {
       imgBack.setAttribute('alt', card.firstName + card.lastName);
       imgBack.setAttribute('title', card.firstName + card.lastName);
       newInput.setAttribute('type', 'radio');
-      newInput.setAttribute('id', `${id}`);
       newInput.setAttribute('name', 'card');
+      newInput.setAttribute('id', arrayIndex);
       newInput.setAttribute('value', card.value);
 
       cardFrontDiv.appendChild(imgFront);
