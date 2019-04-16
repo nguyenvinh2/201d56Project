@@ -32,8 +32,16 @@ GameBoard.prototype.renderGameBoard = function () {
       var imgFront = document.createElement('img');
       var imgBack = document.createElement('img');
       var newInput = document.createElement('input');
-
       newCardDiv.setAttribute('class', 'card');
+      // if(i<this.size/2 && j<this.size/2) {
+      //   newCardDiv.setAttribute('class','first-quad');
+      // } else if(i<this.size/2 && j >= this.size/2) {
+      //   newCardDiv.setAttribute('class','second-quad');
+      // } else if(i >= this.size/2 && j < this.size/2) {
+      //   newCardDiv.setAttribute('class','third-quad');
+      // } else {
+      //   newCardDiv.setAttribute('class','fourth-quad');
+      // }
       cardFrontDiv.setAttribute('class', 'front');
       imgFront.setAttribute('src', 'assets/cf-logo-shield.jpeg');
       imgFront.setAttribute('width', this.imgDim);
