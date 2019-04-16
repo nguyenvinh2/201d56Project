@@ -23,61 +23,78 @@ function Card(firstName,lastName,value){
 for(let i = 0; i < firstNameArr.length; i++){
   new Card(firstNameArr[i],lastNameArr[i],i);
 }
-
 //Score object to be handled
 function Score(score,userName){
   this.score = score;
   this.userName = userName;
   this.scoresArr = [];
+  this.userNamesArr = [];
   this.tmpPlaceHolder = null;
-
-  //gets score values from localStorage
-  this.fromLocalStorage = function(){
-    return JSON.parse(localStorage.getItem('scores'));
-  };
 
   //sets score values in localStorage
   this.toLocalStorage = function(){
-    //top 5 scores exists
-    this.tmpPlaceHolder = null;
-    if(localStorage.length >= 5){
-      this.scoresArr = this.fromLocalStorage();
-      //finds the index in which this.score is greater than and temporarily stores it in tmpPlaceHolder
-      for(let i = 0; i < this.scoresArr.length; i++){
-        if(this.score > this.scoresArr[i].score){
-          this.tmpPlaceHolder = i;
-        }
-      }
-      if(this.tmpPlaceHolder !== null){
-        this.scoresArr.splice(this.tmpPlaceHolder, 0, this.score);
 
-        //pops the last value after the new value is inserted to keep the top 5 structure
-        this.scoresArr.pop();
+    //store scores
+    this.scoresArr = [];
+
+    //store usernames
+    this.userNamesArr = [];
+
+    //stores index of where the new high score will stand amongst the top 5
+    this.tmpPlaceHolder = null;
+
+    //check to see if localStorage has anything stores
+    if(localStorage.length > 0){
+      //get values from localStorage
+      for(let i = 0; i < localStorage.length;i++){
+        this.scoresArr.push(JSON.parse( localStorage.getItem(localStorage.key(i))));
+        this.userNamesArr.push(localStorage.key(i));
       }
-    }
-    // less than 5 top scores exist
-    else if(localStorage.length > 0){
-      this.scoresArr = this.fromLocalStorage();
-      //finds the index in which this.score is greater than and temporarily stores it in this.tmpPlaceholder
-      for(let i = 0;i < this.scoresArr.length;i++){
-        if(this.score > this.scoresArr[i].score){
+      //iterate over scores and compare current user score to the saved 5 high scores
+      for(let i = 0; i < this.scoresArr.length; i++){
+        if(this.score <= this.scoresArr[i]){
           this.tmpPlaceHolder = i;
+          break;
         }
       }
-      //if this.tmpPlaceHolder was set, then insert the new value
-      if(this.tmpPlaceHolder !== null){
-        this.scores.splice(this.tmpPlaceHolder, 0, this.score);
+      //if a new top 5 high score is identfied and there is already 5 top scores
+      if(!(this.tmpPlaceHolder === null) && (localStorage.length >= 5)){
+        this.scoresArr.splice(this.tmpPlaceHolder,0,this.score);
+        this.userNamesArr.splice(this.tmpPlaceHolder,0,this.userName);
+        this.scoresArr.pop();
+        this.userNamesArr.pop();
       }
-      //if this.tmpPlaceHolder wasn't set, then append this.score to the end
-      else{
+      //if a new top 5 high score is identified and there is currently less than 5 top scores saved
+      else if(!(this.tmpPlaceHolder === null) && (localStorage.length < 5)){
+        this.scoresArr.splice(this.tmpPlaceHolder,0,this.score);
+        this.userNamesArr.splice(this.tmpPlaceHolder,0,this.userName);
+      }
+      //if a score was not higher than the saved high scores, but there are less than 5 high scores stored
+      else if((this.tmpPlaceHolder === null) && (localStorage.length < 5)){
         this.scoresArr.push(this.score);
+        this.userNamesArr.push(this.userName);
+      }
+      //if the score isn't high enough and there are already 5 top scores then do nothing
+      else{
+        //do nothing
       }
     }
-    //no current high scores in localStorage. Append the new score
+    //initializing localStorage
     else{
       this.scoresArr.push(this.score);
+      this.userNamesArr.push(this.userName);
     }
-    //store scores in localStorage
-    localStorage.scores = JSON.stringify(this.scoresArr);
+    //clear localStorage so only 5 top scores are saved. Accounting for duplicate user high scores needs to be handled after mvp
+    localStorage.clear();
+    for(let i = 0; i < this.scoresArr.length;i++){
+      localStorage.setItem(this.userNamesArr[i],this.scoresArr[i]);
+    }
   };
+}
+var testArr = [];
+for(let i = 0; i < 10;i++){
+  testArr.push(new Score(i+i,'bob'+i));
+}
+for(let i = testArr.length-1; i >= 0; i--){
+  testArr[i].toLocalStorage();
 }
