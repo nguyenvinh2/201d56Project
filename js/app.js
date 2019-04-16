@@ -24,6 +24,7 @@ for(let i = 0; i < firstNameArr.length; i++){
   new Card(firstNameArr[i],lastNameArr[i],i);
 }
 //Score object to be handled
+// eslint-disable-next-line no-unused-vars
 function Score(score,userName){
   this.score = score;
   this.userName = userName;

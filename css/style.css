@@ -8,6 +8,10 @@ table {
   border-collapse: separate;
 }
 
+.first-quad {
+  animation: firstQuad 5s infinite;
+}
+
 input {
   display: none;
 }
@@ -114,22 +118,22 @@ input {
   animation: firstQuad 5s infinite;
 } */
 
-/* 
-@keyframes firstQuad {
+
+@keyframes infiniteRotate {
   0% {
-    transform: translateX(-50px) translateY(50px);
-  }
-  25% {
-    transform: translateX(50px) translateY(50px);
+    transform: rotateY(180deg);
   }
   50% {
-    transform: translateX(50px) translateY(-50px);
+    transform: rotateY(360deg);
   }
   100% {
-    transform: translateX(-50px) translateY(-50px);
+    transform: rotateY(540deg);
   }
 }
 
- */
+.finish{
+  animation: infiniteRotate 2s infinite;
+}
+
 
 
