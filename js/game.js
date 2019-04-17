@@ -2,7 +2,7 @@
 
 function Game(board) {
   // eslint-disable-next-line no-undef
-  this.userScore = new Score(0, 'Vinh');
+  this.userScore = new Score(0, window.location.search.split('&')[0].split('=')[1]);
   this.userSelects = [];
   this.cardsLeft = board.size * board.size;
 
@@ -99,7 +99,7 @@ window.onload = function () {
 };
 
 function gameDifficulty() {
-  var mode = window.location.search.split('=')[1];
+  var mode = window.location.search.split('&')[1].split('=')[1];
   switch (mode) {
   case 'easy':
     return 4;

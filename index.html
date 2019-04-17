@@ -35,21 +35,22 @@
     </nav>
   </header>
   <main>
+    <div id="text">
+      <h1>Code Pairs</h1>
+      <p>Learn your peers' faces!</p>
+      <p>Click on the card to reveal the faces of your Code Fellows. Match all the faces to win. Nuff said.</p>
+    </div>
+
     <div id="intro-main">
       <div class="intro-image">
       </div>
       <div class="intro-image">
         </div>
     </div>
-    
-    <div id="text">
-      <h1>Code Pairs</h1>
-      <p>Learn your peers' faces!</p>
-      <br>
-      <h3>Instructions:</h3>
-      <p>Click on stuff. Don't mess up. Match pairs. Have fun. Put better instructions and info in the HTML</p>
-    </div>
+
     <form id="game-mode" action="game.html" method="GET">
+      <label for="name">Enter Your Name</label>
+      <input id="name" type="text" name="user" value="Guest">
       <label for="easy">EASY</label>
       <input id="easy" type="radio" name="mode" value="easy">
       <label for="medium">MEDIUM</label>
