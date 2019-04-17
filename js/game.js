@@ -2,7 +2,8 @@
 
 function Game(board) {
   // eslint-disable-next-line no-undef
-  this.userScore = new Score(0, 'Vinh');
+  this.userScore = new Score(0, window.location.search.split('&')[0].split('=')[1]);
+  this.gameMode = gameDifficulty()[0];
   this.userSelects = [];
   this.cardsLeft = board.size * board.size;
 
@@ -38,16 +39,17 @@ function Game(board) {
 
   this.matchSuccess = function (cardInput) {
     this.cardsLeft -= 2;
+    this.changeScore(true);
+    displayInfo();
+    // eslint-disable-next-line no-undef
+    var cardObject = allCards.find((card) => {
+      if (cardInput.value === card.value.toString()) {
+        return card;
+      }
+    });
+    this.makeModal(cardObject);
     if (this.cardsLeft === 0) {
       this.runWinEvents();
-    } else {
-      // eslint-disable-next-line no-undef
-      var cardObject = allCards.find((card) => {
-        if (cardInput.value === card.value.toString()) {
-          return card;
-        }
-      });
-      this.makeModal(cardObject);
     }
   };
 
@@ -66,13 +68,15 @@ function Game(board) {
     setTimeout(this.resetFlip, 1500, cardOne, cardTwo);
     cardOne.removeAttribute('disabled');
     cardTwo.removeAttribute('disabled');
-    this.userScore.score++;
+    this.changeScore(false);
+    displayInfo();
   };
 
   this.resetFlip = function (cardOne, cardTwo) {
     var flipTargetOne = cardOne.parentNode.childNodes['0'].childNodes['0'];
     var flipTargetTwo = cardTwo.parentNode.childNodes['0'].childNodes['0'];
     if (!localStorage.disableSFX) {
+      // eslint-disable-next-line no-undef
       cardFlipSFX.play();
     }
     flipTargetOne.classList.remove('transform');
@@ -82,12 +86,35 @@ function Game(board) {
   this.flipCard = function (inputCard) {
     var flipTarget = inputCard.parentNode.childNodes['0'].childNodes['0'];
     if (!localStorage.disableSFX) {
+      // eslint-disable-next-line no-undef
       cardFlipSFX.play();
     }
     flipTarget.classList.add('transform');
   };
 
-  this.runWinEvents = function() {
+  this.changeScore = function (status) {
+    switch (status) {
+    case true:
+      switch (this.gameMode) {
+      case 'easy':
+        this.userScore.score += 4;
+        break;
+      case 'medium':
+        this.userScore.score += 6;
+        break;
+      case 'hard':
+        this.userScore.score += 8;
+        break;
+      }
+      break;
+    case false:
+      this.userScore.score -= 1;
+      break;
+    }
+  };
+
+  this.runWinEvents = function () {
+    this.userScore.toLocalStorage();
     var cards = document.getElementsByClassName('card');
     for (let i = 0; i < cards.length; i++) {
       cards[i].classList.add('finish');
@@ -95,20 +122,39 @@ function Game(board) {
   };
 }
 
+// global code execution
 // eslint-disable-next-line no-undef
-var gaming = new Game(new GameBoard(4));
+var gaming = new Game(new GameBoard(gameDifficulty()[1]));
 gaming.createBoard();
 window.onload = function () {
   formReset();
   triggerEvents(true);
+  displayInfo();
 };
+
+function gameDifficulty() {
+  var modeArray = new Array(2);
+  modeArray[0] = window.location.search.split('&')[1].split('=')[1];
+  switch (modeArray[0]) {
+  case 'easy':
+    modeArray[1] = 4;
+    return modeArray;
+  case 'medium':
+    modeArray[1] = 6;
+    return modeArray;
+  case 'hard':
+    modeArray[1] = 8;
+    return modeArray;
+  }
+}
+
 //convoluted way to get JS to recognize the proper "this" object
 function triggerEvents(enabled) {
   if (enabled) {
     document.getElementById('game').addEventListener('click', runEvent, false);
   }
   else {
-    document.getElementById('game').removeEventListener('click', runEvent);
+    document.getElementById('game').removeEventListener('click', runEvent, false);
   }
 }
 
@@ -129,9 +175,18 @@ function hideModal(getModal) {
   getModal.style.display = 'none';
 }
 
-document.getElementById('card-modal').addEventListener('click', (event) => {
+function displayInfo() {
+  var name = window.location.search.split('&')[0].split('=')[1];
+  var appendName = document.getElementById('user-info').getElementsByTagName('p')[0];
+  var appendScore = document.getElementById('user-info').getElementsByTagName('p')[1];
+  appendName.textContent = `Hi ${name.replace(/\+/g, ' ')}!`;
+  appendScore.textContent = `Points: ${gaming.userScore.score}`;
+}
+
+document.getElementById('card-modal').addEventListener('click', () => {
   var getModal = document.getElementById('card-modal');
-  if (event.target === getModal) {
-    hideModal(getModal);
-  }
+  hideModal(getModal);
 }, false);
+
+
+console.log(gaming.gameMode);
