@@ -37,5 +37,3 @@ var renderHiScores = function() {
     scoreListEL.appendChild(newLI);
   });
 };
-
-var hiScores = new Score();

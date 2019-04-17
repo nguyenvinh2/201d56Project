@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/sound.css">
+    <link rel="stylesheet" type="text/css" href="css/hiscoremodal.css">
   </head>
   <body>
     <header>
@@ -16,7 +17,7 @@
       <a href="index.html"><h2>Code Pairs</h2></a>
       <nav>
 	<ul>
-	  <li>Hi Scores</li>
+	  <li><span id="hiscorebtn">Hi Scores</span></li>
 	  <li><a href="about.html">About</a></li>
 	  <li>
 	    BGM
@@ -41,17 +42,27 @@
 	<table id="game-board-table">
 	</table>
       </form>
-        <div id="card-modal">
-    <div id="inner-modal">
-      <h1 id="title-modal"></h1>
-      <img id="img-modal">
-      <p id="desc-modal"></p>
-    </div>
+      <div id="card-modal">
+	<div id="inner-modal">
+	  <h1 id="title-modal"></h1>
+	  <img id="img-modal">
+	  <p id="desc-modal"></p>
+	</div>
+      </div>
+      <div id="hiscoremodal" class="scoremodal">
+	<div class="hiscore-modal-content">
+	  <span id="hiscore-modal-close">&times;</span>
+	  Start Hi Score List
+	  <ol id="hi-scores-list">
+	  </ol>
+	  End Hi Score List
+	</div>
       </div>
     </main>
     <script src="js/app.js"></script>
     <script src="js/gameboard.js"></script>
     <script src="js/game.js"></script>
     <script src="js/sound.js"></script>
+    <script src="js/hiscoremodal.js"></script>
   </body>
 </html>
