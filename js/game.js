@@ -81,7 +81,7 @@ function Game(board) {
     flipTarget.classList.add('transform');
   };
 
-  this.runWinEvents = function() {
+  this.runWinEvents = function () {
     var cards = document.getElementsByClassName('card');
     for (let i = 0; i < cards.length; i++) {
       cards[i].classList.add('finish');
@@ -89,8 +89,20 @@ function Game(board) {
   };
 }
 
+function gameDifficulty() {
+  var mode = window.location.search.split('=')[1];
+  switch (mode) {
+  case 'easy':
+    return 4;
+  case 'medium':
+    return 6;
+  case 'hard':
+    return 8;
+  }
+}
+
 // eslint-disable-next-line no-undef
-var gaming = new Game(new GameBoard(4));
+var gaming = new Game(new GameBoard(gameDifficulty()));
 gaming.createBoard();
 window.onload = function () {
   formReset();
@@ -129,3 +141,5 @@ document.getElementById('card-modal').addEventListener('click', (event) => {
     hideModal(getModal);
   }
 }, false);
+
+
