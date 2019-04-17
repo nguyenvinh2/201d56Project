@@ -72,12 +72,18 @@ function Game(board) {
   this.resetFlip = function (cardOne, cardTwo) {
     var flipTargetOne = cardOne.parentNode.childNodes['0'].childNodes['0'];
     var flipTargetTwo = cardTwo.parentNode.childNodes['0'].childNodes['0'];
+    if (!localStorage.disableSFX) {
+      cardFlipSFX.play();
+    }
     flipTargetOne.classList.remove('transform');
     flipTargetTwo.classList.remove('transform');
   };
 
   this.flipCard = function (inputCard) {
     var flipTarget = inputCard.parentNode.childNodes['0'].childNodes['0'];
+    if (!localStorage.disableSFX) {
+      cardFlipSFX.play();
+    }
     flipTarget.classList.add('transform');
   };
 

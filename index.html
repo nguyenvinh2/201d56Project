@@ -5,15 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link rel="stylesheet" type="text/css" href="css/bgm_switch.css">
+    <link rel="stylesheet" type="text/css" href="css/sound.css">
     <title>Code Pairs</title>
   </head>
   <body>
     <header>
       <iframe src="assets/audio/silence.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
-      <audio id="background_music" autoplay loop>
-	<source src="assets/audio/Game-Menu_v001.mp3" />
-      </audio>
+      <audio id="background_music" src="assets/audio/Game-Menu_v001.mp3" type="audio/mpeg" preload="auto" autobuffer autoplay loop></audio>
       <a href="index.html"><h2>Code Pairs</h2></a>
       <nav>
 	<ul>
@@ -23,6 +21,13 @@
 	    BGM
 	    <label class="bgm_switch">
 	      <input id="bgm_toggle" type="checkbox" checked>
+	      <span class="slider round"></span>
+	    </label>
+	  </li>
+	  <li>
+	    SFX
+	    <label class="sfx_switch">
+	      <input id="sfx_toggle" type="checkbox" checked>
 	      <span class="slider round"></span>
 	    </label>
 	  </li>
