@@ -30,10 +30,21 @@ window.onclick = function(event) {
 
 var renderHiScores = function() {
   var scoresListEl = document.getElementById('hi-scores-list');
+  scoresListEl.textContent = '';
+  var keys = ['game_1st','game_2nd','game_3rd','game_4th','game_5th'];
   var scores = [];
-  scores.forEach(function(score) {
+  for (var i = 0; i < 5; i++) {
+    if (localStorage[keys[i]]) {
+      scores.push(JSON.parse(localStorage[keys[i]]));
+    } else {
+      scores.push(null);
+    }
+  }
+  for (i = 0; i < 5; i++) {
     var newLI = document.createElement('li');
-    newLI.textContent = `${score[0]} ${score[1]}`;
-    scoreListEL.appendChild(newLI);
-  });
+    if (scores[i]) {
+      newLI.textContent = `${scores[i][0]} ${scores[i][1]}`;
+    }
+    scoresListEl.appendChild(newLI);
+  }
 };
