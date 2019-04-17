@@ -1,25 +1,62 @@
+/* Header Section */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 25px;
+  background-color: cyan;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .15);
+}
+
+header a:hover {
+  color: mediumpurple;
+  cursor: pointer;
+}
+
+header li:hover {
+  color: mediumpurple;
+  cursor: pointer;
+}
+
+header a{
+  text-decoration-line: none;
+  color: black;
+}
+
+header a h2 {
+  font-size: 45px;
+}
+
+header nav {
+  padding: 10px 10px;
+}
+
+header nav ul li {
+  display: inline-block;
+  font-size: 35px;
+
+  margin-left: 15px;
+}
 
 /* Main section */
+body {
+  background-color: lightcyan;
+  font-family: 'Arimo', sans-serif;
+}
 
 main {
+  margin-top: 25px;
+  padding-bottom: 50px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-
-* Cards array */
-table {
+/* * Cards array */ 
+/* #game-board-table {
   display: cell;
-  margin-left: auto;
-  margin-right: auto;
-  border-spacing: 10px;
   border-collapse: separate;
-}
-
-.first-quad {
-  animation: firstQuad 5s infinite;
-}
+} */
 
 input[type=radio] {
   display: none;
@@ -28,6 +65,7 @@ input[type=radio] {
 
 /* Flip Container, W3School Style, adjusted for clicking */
 .card {
+  margin: 10px;
   font-size: 25px;
   text-align: left;
   transition: transform .75s;
@@ -121,6 +159,77 @@ input[type=radio] {
   height: 300px;
 }
 
+.intro-image {
+  margin: 10px 15px;
+}
+
+#intro-content {
+  width: 60%;
+  margin: 25px auto;
+  text-align: center;
+  background-color: cyan;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .15);
+}
+
+#text {
+  background-color: cornflowerblue;
+  color: white;
+  padding: 25px;
+}
+
+h3{ 
+  margin-bottom: 25px;
+  font-weight: bolder;
+  font-size: 30px;
+}
+
+#intro-form {
+  background-color: cornflowerblue;
+  color: white;
+  padding: 25px;
+}
+
+#game-mode input[type=text] {
+  border: none;
+}
+
+#game-mode {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+}
+
+#game-mode fieldset {
+  padding: 10px;
+  background-color: greenyellow;
+}
+
+#game-mode label[for=name] {
+  box-shadow: none;
+  border-radius: none;
+  padding: 0;
+}
+
+#game-mode label {
+  background-color: greenyellow;
+  color: darkblue;
+  padding: 10px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .15);
+  border-radius: 10px;
+}
+
+#game-mode label:hover {
+  transform: translateY(2px);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .15);
+  cursor: pointer;
+}
+
+#game-mode label[for=name]:hover {
+  transform: none;
+  box-shadow: none;
+  cursor: auto;
+}
+
 /* Animation */
 
 @keyframes expand {
@@ -155,6 +264,7 @@ input[type=radio] {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  width: 100%;
 }
 
 
