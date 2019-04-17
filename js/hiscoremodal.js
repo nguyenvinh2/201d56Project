@@ -14,19 +14,19 @@ var hsSpan = document.getElementById('hiscore-modal-close');
 hsBtn.onclick = function() {
   renderHiScores();
   hsModal.style.display = 'block';
-}
+};
 
 // When the user clicks on <span> (x), close the modal
 hsSpan.onclick = function() {
   hsModal.style.display = 'none';
-}
+};
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-  if (event.target == hsModal) {
+  if (event.target === hsModal) {
     hsModal.style.display = 'none';
   }
-}
+};
 
 var renderHiScores = function() {
   var scoresListEl = document.getElementById('hi-scores-list');
