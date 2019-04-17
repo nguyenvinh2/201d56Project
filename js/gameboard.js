@@ -25,7 +25,7 @@ GameBoard.prototype.renderGameBoard = function () {
       var card = this.shuffledArray[arrayIndex++];
       var newCol = document.createElement('td');
       var newLabel = document.createElement('label');
-      newLabel.setAttribute('for', `${arrayIndex}`);
+      newLabel.setAttribute('for', arrayIndex);
       var newCardDiv = document.createElement('div');
       var cardFrontDiv = document.createElement('div');
       var cardBackDiv = document.createElement('div');

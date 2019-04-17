@@ -136,4 +136,59 @@ input {
 }
 
 
+#intro-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+.intro-animation {
+  animation: slowRotate 4s infinite;
+}
+
+
+@keyframes slowRotate {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes moveLeft {
+  0% {
+    transform: translateX(0) rotateY(180deg);
+  }
+  50% {
+    transform: translateX(-250px) rotateY(180deg);
+  }
+  100% {
+    transform: translateX(0px) rotateY(360deg);
+  }
+}
+
+@keyframes moveRight {
+  0% {
+    transform: translateX(0) rotateY(180deg);
+  }
+  50% {
+    transform: translateX(250px) rotateY(180deg);
+  }
+  100% {
+    transform: translateX(0px) rotateY(360deg);
+  }
+}
+
+.intro-translate-left {
+  animation: moveLeft 2s;
+}
+
+.intro-translate-right {
+  animation: moveRight 2s;
+}
 
