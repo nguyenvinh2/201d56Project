@@ -89,6 +89,15 @@ function Game(board) {
   };
 }
 
+// global code execution
+// eslint-disable-next-line no-undef
+var gaming = new Game(new GameBoard(gameDifficulty()));
+gaming.createBoard();
+window.onload = function () {
+  formReset();
+  triggerEvents(true);
+};
+
 function gameDifficulty() {
   var mode = window.location.search.split('=')[1];
   switch (mode) {
@@ -101,20 +110,13 @@ function gameDifficulty() {
   }
 }
 
-// eslint-disable-next-line no-undef
-var gaming = new Game(new GameBoard(gameDifficulty()));
-gaming.createBoard();
-window.onload = function () {
-  formReset();
-  triggerEvents(true);
-};
 //convoluted way to get JS to recognize the proper "this" object
 function triggerEvents(enabled) {
   if (enabled) {
     document.getElementById('game').addEventListener('click', runEvent, false);
   }
   else {
-    document.getElementById('game').removeEventListener('click', runEvent);
+    document.getElementById('game').removeEventListener('click', runEvent, false);
   }
 }
 
