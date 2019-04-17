@@ -76,6 +76,7 @@ function Game(board) {
     var flipTargetOne = cardOne.parentNode.childNodes['0'].childNodes['0'];
     var flipTargetTwo = cardTwo.parentNode.childNodes['0'].childNodes['0'];
     if (!localStorage.disableSFX) {
+      // eslint-disable-next-line no-undef
       cardFlipSFX.play();
     }
     flipTargetOne.classList.remove('transform');
@@ -85,6 +86,7 @@ function Game(board) {
   this.flipCard = function (inputCard) {
     var flipTarget = inputCard.parentNode.childNodes['0'].childNodes['0'];
     if (!localStorage.disableSFX) {
+      // eslint-disable-next-line no-undef
       cardFlipSFX.play();
     }
     flipTarget.classList.add('transform');
