@@ -34,8 +34,23 @@ header nav {
 header nav ul li {
   display: inline-block;
   font-size: 35px;
+  margin-left: 25px;
+}
 
-  margin-left: 15px;
+header nav ul li p{
+  display: inline;
+}
+
+#user-info {
+  background-color: greenyellow;
+  font-size: 35px;
+  border-radius: 5px;
+  padding: 0 5px;
+}
+
+#user-info:hover {
+  color: black;
+  cursor: auto;
 }
 
 /* Main section */
@@ -228,7 +243,13 @@ h3{
   transform: none;
   box-shadow: none;
   cursor: auto;
+  
 }
+
+#game-mode input[type=text] {
+  padding: 5px;
+}
+
 
 /* Animation */
 
