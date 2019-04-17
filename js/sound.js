@@ -3,9 +3,9 @@
 var bgm = document.getElementById('background_music');
 var bgmToggle = document.getElementById('bgm_toggle');
 var sfxToggle = document.getElementById('sfx_toggle');
-var cardFlipSFX = document.getElementById('cardflipsfx');
+var cardFlipSFX = document.getElementById('cardflipsfx'); // eslint-disable-line
 
-var bgmToggleOnOff = function(e) {
+var bgmToggleOnOff = function() {
   if (localStorage.disableBGM) {
     localStorage.removeItem('disableBGM');
     bgm.load();
@@ -15,7 +15,7 @@ var bgmToggleOnOff = function(e) {
   }
 };
 
-var sfxToggleOnOff = function(e) {
+var sfxToggleOnOff = function() {
   if (localStorage.disableSFX) {
     localStorage.removeItem('disableSFX');
   } else {
@@ -33,4 +33,4 @@ if (localStorage.disableBGM) {
 
 if (localStorage.disableSFX) {
   sfxToggle.checked = false;
-};
+}
