@@ -39,7 +39,7 @@ function Game(board) {
   this.matchSuccess = function (cardInput) {
     this.cardsLeft -= 2;
     if (this.cardsLeft === 0) {
-      alert(`Congrats, you won! Score: ${this.userScore.score}`);
+      this.runWinEvents();
     } else {
       // eslint-disable-next-line no-undef
       var cardObject = allCards.find((card) => {
@@ -80,10 +80,17 @@ function Game(board) {
     var flipTarget = inputCard.parentNode.childNodes['0'].childNodes['0'];
     flipTarget.classList.add('transform');
   };
+
+  this.runWinEvents = function() {
+    var cards = document.getElementsByClassName('card');
+    for (let i = 0; i < cards.length; i++) {
+      cards[i].classList.add('finish');
+    }
+  };
 }
 
 // eslint-disable-next-line no-undef
-var gaming = new Game(new GameBoard(2));
+var gaming = new Game(new GameBoard(4));
 gaming.createBoard();
 window.onload = function () {
   formReset();
