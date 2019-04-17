@@ -5,24 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link rel="stylesheet" type="text/css" href="css/bgm_switch.css">
+    <link rel="stylesheet" type="text/css" href="css/sound.css">
+    <link rel="stylesheet" type="text/css" href="css/hiscoremodal.css">
     <title>About Us</title>
   </head>
   <body>
     <header>
       <iframe src="assets/audio/silence.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
-      <audio id="background_music" autoplay loop>
-	<source src="assets/audio/Game-Menu_v001.mp3" />
-      </audio>
+      <audio id="background_music" src="assets/audio/Game-Menu_v001.mp3" type="audio/mpeg" preload="auto" autobuffer autoplay loop></audio>
       <a href="index.html"><h2>Code Pairs</h2></a>
       <nav>
 	<ul>
-	  <li>Hi Scores</li>
+	  <li><span id="hiscorebtn">Hi Scores</span></li>
 	  <li><a href="about.html">About</a></li>
 	  <li>
 	    BGM
 	    <label class="bgm_switch">
 	      <input id="bgm_toggle" type="checkbox" checked>
+	      <span class="slider round"></span>
+	    </label>
+	  </li>
+	  <li>
+	    SFX
+	    <label class="sfx_switch">
+	      <input id="sfx_toggle" type="checkbox" checked>
 	      <span class="slider round"></span>
 	    </label>
 	  </li>
@@ -38,7 +44,7 @@
 	    <ul>
 	      <li><h3>Matt Burger</h3></li>
 	      <li>Software Developer</li>
-	      <li></li>
+	      <li>Matt has a background in network hardware , distributed systems and Computer Science. He enjoys any movie with the following actors: Denzel Washington, Morgan Freeman, Tom Hanks, Matt Damon, Will Smith, Bill Murray (except maybe Garfield), and Keanu Reeves. There's plenty more actors and actresses, but why bore you with my favs. PLAY THE GAME!</li>
 	      <li>matt.burger1@outlook.com</li>
 	      <li>linkedin.com/in/matt-burger/</li>
 	      <li>github.com/mattburger</li>
@@ -73,7 +79,16 @@
 	  </td>
 	</tr>
       </table>
+      <div id="hiscoremodal" class="scoremodal">
+	<div class="hiscore-modal-content">
+	  <span id="hiscore-modal-close">&times;</span>
+	  <h3>Hi Scores:</h3>
+	  <ol id="hi-scores-list">
+	  </ol>
+	</div>
+      </div>
     </main>
     <script src="js/sound.js"></script>
+    <script src="js/hiscoremodal.js"></script>
   </body>
 </html>

@@ -28,14 +28,13 @@ function cardDeckInit(){
   }
   var usedFactArr = [];
   var index = 13;
-  while(index < allCards.length-1){
-    var tmpRandomNumber = Math.floor(Math.random() * allCards.length-1);
+  while(index < allCards.length){
+    var tmpRandomNumber = Math.floor(Math.random() * factPool.length);
     if(!(usedFactArr.includes(tmpRandomNumber))){
       allCards[index].facts = factPool[tmpRandomNumber];
       usedFactArr.push(tmpRandomNumber);
       index++;
     }
-
   }
   allCards[0].facts = 'I am secretly Dark Overlord Dr. Van Code-n-Play... I also have several furry companions. One of them I bring to work regularly; The awesome Demi of house Hamm!!';
   allCards[1].facts = 'I am one of the coolest dogs with legs >= 3. Ask Sam!';
