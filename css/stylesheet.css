@@ -1,30 +1,39 @@
-/* Header Section */
 
+body {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Header Section */
 header {
   display: flex;
   justify-content: space-between;
-  padding: 25px 25px;
+  /* padding: 25px 25px; */
   background-color: cyan;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .15);
 }
 
 header a:hover {
-  color: mediumpurple;
+  color: white;
   cursor: pointer;
 }
 
 header li:hover {
-  color: mediumpurple;
+  color: whitesmoke;
   cursor: pointer;
 }
 
 header a{
   text-decoration-line: none;
-  color: black;
+  color: blue;
 }
 
 header a h2 {
-  font-size: 45px;
+  font-size: 35px;
+  padding: 10px;
+  padding-left: 60px;
+  font-weight: bolder;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 header nav {
@@ -33,17 +42,28 @@ header nav {
 
 header nav ul li {
   display: inline-block;
-  font-size: 35px;
+  font-size: 25px;
   margin-left: 25px;
+  color: blue;
 }
 
 header nav ul li p{
   display: inline;
 }
 
+.switch {
+  font-size: 10px;
+  text-align: center;
+}
+
+.switch:hover {
+  cursor: auto;
+  color: black;
+}
+
 #user-info {
   background-color: greenyellow;
-  font-size: 35px;
+  font-size: 20px;
   border-radius: 5px;
   padding: 0 5px;
 }
@@ -60,21 +80,20 @@ body {
 }
 
 main {
-  margin-top: 25px;
   padding-bottom: 50px;
+  margin-top: 25px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-/* * Cards array */ 
-/* #game-board-table {
-  display: cell;
-  border-collapse: separate;
-} */
-
 input[type=radio] {
   display: none;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
 }
 /* ----------------- */
 
@@ -100,7 +119,7 @@ input[type=radio] {
   height: 100%;
   box-shadow: 0 8px 8px 0 rgba(0, 0, 0, .15);
   border-radius: 15px;
-  background-color: rgba(245, 245, 245);
+  background-color: rgba(245, 245, 245, 1);
   opacity: .85;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
@@ -140,11 +159,11 @@ input[type=radio] {
 }
 
 #inner-modal {
+  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, .15);
   position: relative;
   margin: 5% auto;
   padding: 15px;
-  background-color: whitesmoke;
-  border-radius: 15px;
+  background-color: white;
   width: 25%;
   text-align: center;
   animation: expand .7s;
@@ -152,6 +171,7 @@ input[type=radio] {
 
 #inner-modal h1 {
   margin: 5px;
+  margin-bottom: 10px;
   font-size: 30px;
   font-weight: bolder;
 }
@@ -163,6 +183,31 @@ input[type=radio] {
 #inner-modal p {
   font-size: 15px;
   margin: 5px;
+}
+
+#congrats {
+  display: none;
+  padding: 20px;
+  text-align: center;
+  height: auto;
+  width: inherit;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+}
+
+#congrats h4 {
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+#congrats p {
+  margin-bottom: 10px
+}
+
+#congrats button {
+  margin-top: 5px;
 }
 
 /* -------------------- */
@@ -190,6 +235,10 @@ input[type=radio] {
   background-color: cornflowerblue;
   color: white;
   padding: 25px;
+}
+
+.game {
+  width: auto;
 }
 
 h3{ 
@@ -225,7 +274,7 @@ h3{
   padding: 0;
 }
 
-#game-mode label {
+#game-mode label, button {
   background-color: greenyellow;
   color: darkblue;
   padding: 10px;
@@ -286,7 +335,7 @@ h3{
 .profile {
   background-color: white;
   width: 20vw;
-  height: 90vh;
+  height: 80vh;
   text-align: left;
   margin-right: 20px;
   margin-left: 20px;
@@ -401,6 +450,3 @@ h3{
 }
 
 /* ------------------ */
-
-
-
