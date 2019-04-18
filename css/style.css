@@ -250,7 +250,69 @@ h3{
   padding: 5px;
 }
 
+/* About Us */
 
+
+
+#about-main {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: auto;
+}
+
+#about-table {
+  display: cell;
+  border-spacing: separate;
+}
+
+#about-main h5{
+  text-align: center;
+  font-weight: bold;
+  font-size: 50px;
+  margin: 0 0 25px 0;
+  width: inherit;
+}
+
+.profile h6 {
+  text-align: center;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  margin: 0px 0 25px 0;
+  text-decoration-line: underline;
+}
+
+.profile {
+  background-color: white;
+  width: 20vw;
+  height: 80vh;
+  text-align: left;
+  margin-right: 20px;
+  margin-left: 20px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .15);
+}
+
+.profile img {
+  width: 20vw;
+}
+.profile li {
+  word-wrap: break-word;
+}
+
+.title, .comm, .content {
+  margin: 0 10px;
+  margin-bottom: 5px;
+}
+
+.comm {
+  margin-top: 10px;
+}
+
+.title {
+  font-weight: bold;
+  margin-bottom: 25px;
+}
 /* Animation */
 
 @keyframes expand {
