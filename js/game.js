@@ -174,7 +174,7 @@ function displayInfo() {
   var name = window.location.search.split('&')[0].split('=')[1];
   var appendName = document.getElementById('user-info').getElementsByTagName('p')[0];
   var appendScore = document.getElementById('user-info').getElementsByTagName('p')[1];
-  appendName.textContent = `Hi ${name.replace(/\+/g, ' ') || 'Thanos'}!`;
+  appendName.textContent = `Hi ${name.replace(/\+/g, ' ') || 'Thanos'}:`;
   appendScore.textContent = `Points: ${gaming.userScore.score}`;
 }
 
