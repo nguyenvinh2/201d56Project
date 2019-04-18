@@ -24,14 +24,14 @@
       <ul>
           <li><span id="hiscorebtn">Hi Scores</span></li>
           <li><a href="about.html">About Us</a></li>
-        <li>
+        <li class="switch">
             BGM
             <label class="bgm_switch">
               <input id="bgm_toggle" type="checkbox" checked>
               <span class="slider round"></span>
             </label>
           </li>
-          <li>
+          <li class="switch">
             SFX
             <label class="sfx_switch">
               <input id="sfx_toggle" type="checkbox" checked>
@@ -59,7 +59,7 @@
         <form id="game-mode" action="game.html" method="GET">
           <fieldset>
             <label for="name">Enter Your Name</label>
-            <input id="name" type="text" name="user" value="Guest">
+            <input id="name" type="text" name="user" value="Guest" required>
           </fieldset>
             <label for="easy">EASY</label>
             <input id="easy" type="radio" name="mode" value="easy">

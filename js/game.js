@@ -2,7 +2,7 @@
 
 function Game(board) {
   // eslint-disable-next-line no-undef
-  this.userScore = new Score(0, window.location.search.split('&')[0].split('=')[1].replace(/\+/g, ' '));
+  this.userScore = new Score(0, window.location.search.split('&')[0].split('=')[1].replace(/\+/g || 'Thanos', ' '));
   this.gameMode = gameDifficulty()[0];
   this.userSelects = [];
   this.cardsLeft = board.size * board.size;
@@ -174,7 +174,7 @@ function displayInfo() {
   var name = window.location.search.split('&')[0].split('=')[1];
   var appendName = document.getElementById('user-info').getElementsByTagName('p')[0];
   var appendScore = document.getElementById('user-info').getElementsByTagName('p')[1];
-  appendName.textContent = `Hi ${name.replace(/\+/g, ' ')}!`;
+  appendName.textContent = `Hi ${name.replace(/\+/g, ' ') || 'Thanos'}!`;
   appendScore.textContent = `Points: ${gaming.userScore.score}`;
 }
 
