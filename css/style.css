@@ -1,39 +1,30 @@
-
-body {
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
 /* Header Section */
+
 header {
   display: flex;
   justify-content: space-between;
-  /* padding: 25px 25px; */
+  padding: 25px 25px;
   background-color: cyan;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .15);
 }
 
 header a:hover {
-  color: white;
+  color: mediumpurple;
   cursor: pointer;
 }
 
 header li:hover {
-  color: whitesmoke;
+  color: mediumpurple;
   cursor: pointer;
 }
 
 header a{
   text-decoration-line: none;
-  color: blue;
+  color: black;
 }
 
 header a h2 {
-  font-size: 35px;
-  padding: 10px;
-  padding-left: 60px;
-  font-weight: bolder;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 45px;
 }
 
 header nav {
@@ -42,28 +33,17 @@ header nav {
 
 header nav ul li {
   display: inline-block;
-  font-size: 25px;
+  font-size: 35px;
   margin-left: 25px;
-  color: blue;
 }
 
 header nav ul li p{
   display: inline;
 }
 
-.switch {
-  font-size: 10px;
-  text-align: center;
-}
-
-.switch:hover {
-  cursor: auto;
-  color: black;
-}
-
 #user-info {
   background-color: greenyellow;
-  font-size: 20px;
+  font-size: 35px;
   border-radius: 5px;
   padding: 0 5px;
 }
@@ -80,20 +60,21 @@ body {
 }
 
 main {
-  padding-bottom: 50px;
   margin-top: 25px;
+  padding-bottom: 50px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
+/* * Cards array */ 
+/* #game-board-table {
+  display: cell;
+  border-collapse: separate;
+} */
+
 input[type=radio] {
   display: none;
-}
-
-table {
-  margin-left: auto;
-  margin-right: auto;
 }
 /* ----------------- */
 
@@ -119,7 +100,7 @@ table {
   height: 100%;
   box-shadow: 0 8px 8px 0 rgba(0, 0, 0, .15);
   border-radius: 15px;
-  background-color: rgba(245, 245, 245, 1);
+  background-color: rgba(245, 245, 245);
   opacity: .85;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
@@ -159,11 +140,11 @@ table {
 }
 
 #inner-modal {
-  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, .15);
   position: relative;
   margin: 5% auto;
   padding: 15px;
-  background-color: white;
+  background-color: whitesmoke;
+  border-radius: 15px;
   width: 25%;
   text-align: center;
   animation: expand .7s;
@@ -171,7 +152,6 @@ table {
 
 #inner-modal h1 {
   margin: 5px;
-  margin-bottom: 10px;
   font-size: 30px;
   font-weight: bolder;
 }
@@ -183,31 +163,6 @@ table {
 #inner-modal p {
   font-size: 15px;
   margin: 5px;
-}
-
-#congrats {
-  display: none;
-  padding: 20px;
-  text-align: center;
-  height: auto;
-  width: inherit;
-  margin-left: auto;
-  margin-right: auto;
-  color: white;
-}
-
-#congrats h4 {
-  margin-bottom: 20px;
-  font-weight: bold;
-  font-size: 25px;
-}
-
-#congrats p {
-  margin-bottom: 10px
-}
-
-#congrats button {
-  margin-top: 5px;
 }
 
 /* -------------------- */
@@ -235,10 +190,6 @@ table {
   background-color: cornflowerblue;
   color: white;
   padding: 25px;
-}
-
-.game {
-  width: auto;
 }
 
 h3{ 
@@ -274,7 +225,7 @@ h3{
   padding: 0;
 }
 
-#game-mode label, button {
+#game-mode label {
   background-color: greenyellow;
   color: darkblue;
   padding: 10px;
