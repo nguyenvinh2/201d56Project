@@ -127,24 +127,3 @@ function Score(score,userName){
 
 //create the deck of cards
 cardDeckInit();
-
-/* test case
-var testArr = [];
-
-testArr.push(new Score(Math.floor(Math.random() * 1000),'bob'));
-testArr.push(new Score(Math.floor(Math.random() * 1000),'bill'));
-testArr.push(new Score(Math.floor(Math.random() * 1000),'janice'));
-testArr.push(new Score(Math.floor(Math.random() * 1000),'mike'));
-testArr.push(new Score(Math.floor(Math.random() * 1000),'stephen'));
-testArr.push(new Score(Math.floor(Math.random() * 1000),'vinh'));
-testArr.push(new Score(Math.floor(Math.random() * 1000),'john'));
-testArr.push(new Score(Math.floor(Math.random() * 1000),'pat'));
-testArr.push(new Score(Math.floor(Math.random() * 1000),'matt'));
-testArr.push(new Score(Math.floor(Math.random() * 1000),'sam'));
-for(let i = testArr.length-1; i >= 0; i--){
-  testArr[i].toLocalStorage();
-
-}
-
-console.table(testArr[0].readHighScores());
-*/

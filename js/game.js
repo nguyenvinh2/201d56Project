@@ -2,7 +2,7 @@
 
 function Game(board) {
   // eslint-disable-next-line no-undef
-  this.userScore = new Score(0, window.location.search.split('&')[0].split('=')[1]);
+  this.userScore = new Score(0, window.location.search.split('&')[0].split('=')[1].replace(/\+/g || 'Thanos', ' '));
   this.gameMode = gameDifficulty()[0];
   this.userSelects = [];
   this.cardsLeft = board.size * board.size;
@@ -12,6 +12,7 @@ function Game(board) {
     board.deck = allCards;
     board.makeShuffledArray();
     board.renderGameBoard();
+    board.setSize(this.gameMode);
   };
 
   this.executeOrder66 = function () {
@@ -115,10 +116,31 @@ function Game(board) {
 
   this.runWinEvents = function () {
     this.userScore.toLocalStorage();
-    var cards = document.getElementsByClassName('card');
-    for (let i = 0; i < cards.length; i++) {
-      cards[i].classList.add('finish');
+    document.getElementById('card-modal').addEventListener('click', () => {
+      var cards = document.getElementsByClassName('card');
+      for (let i = 0; i < cards.length; i++) {
+        cards[i].classList.add('finish');
+      }
+      document.body.style.backgroundImage = 'url(\'assets/fireworks.gif\')';
+      this.createCongratMessage();
+    });
+  };
+
+  this.createCongratMessage = function() {
+    var congratContent = document.getElementById('congrats');
+    var highScoreContent = congratContent.getElementsByTagName('p')[1];
+    var scoreContent = congratContent.getElementsByTagName('p')[0];
+    highScoreContent.innerHTML = '';
+    scoreContent.innerHTML = '';
+    var lowScore = this.userScore.readHighScores();
+    scoreContent.textContent = `Your final score is ${this.userScore.score}`;
+    if(this.userScore.score < lowScore[lowScore.length-1][1]) {
+      highScoreContent.innerHTML = 'You did not score high enought to make it to the Hall of Fame, though <i class="em em-anguished"></i>';
+    } else {
+      highScoreContent.innerHTML = 'You made it to the Hall of Fame. Click on High Scores to see your ranking! <i class="em em-sunglasses"></i>';
     }
+    document.getElementsByTagName('main')[0].style.display = 'block';
+    congratContent.style.display = 'block';
   };
 }
 
@@ -135,17 +157,8 @@ window.onload = function () {
 function gameDifficulty() {
   var modeArray = new Array(2);
   modeArray[0] = window.location.search.split('&')[1].split('=')[1];
-  switch (modeArray[0]) {
-  case 'easy':
-    modeArray[1] = 4;
-    return modeArray;
-  case 'medium':
-    modeArray[1] = 6;
-    return modeArray;
-  case 'hard':
-    modeArray[1] = 8;
-    return modeArray;
-  }
+  modeArray[1] = {'easy': 4, 'medium': 6, 'hard': 8}[modeArray[0]];
+  return modeArray;
 }
 
 //convoluted way to get JS to recognize the proper "this" object
@@ -175,11 +188,16 @@ function hideModal(getModal) {
   getModal.style.display = 'none';
 }
 
+// eslint-disable-next-line no-unused-vars
+function playAgain() {
+  location.reload();
+}
+
 function displayInfo() {
   var name = window.location.search.split('&')[0].split('=')[1];
   var appendName = document.getElementById('user-info').getElementsByTagName('p')[0];
   var appendScore = document.getElementById('user-info').getElementsByTagName('p')[1];
-  appendName.textContent = `Hi ${name.replace(/\+/g, ' ')}!`;
+  appendName.textContent = `Hi ${name.replace(/\+/g, ' ') || 'Thanos'}:`;
   appendScore.textContent = `Points: ${gaming.userScore.score}`;
 }
 
@@ -189,4 +207,3 @@ document.getElementById('card-modal').addEventListener('click', () => {
 }, false);
 
 
-console.log(gaming.gameMode);
