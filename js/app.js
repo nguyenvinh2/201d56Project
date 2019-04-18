@@ -51,11 +51,6 @@ function cardDeckInit(){
   allCards[12].facts = 'I am still working on a fact for myself. I\'ll let you know in 301.';
 
 }
-function initializeLocalStorage(){
-  for(let i = 0; i < 5; i++){
-    loca
-  }
-}
 
 //Score object to be handled
 // eslint-disable-next-line no-unused-vars
