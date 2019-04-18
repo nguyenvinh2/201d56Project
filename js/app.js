@@ -132,7 +132,12 @@ function Score(score,userName){
   this.readHighScores = function(){
     let highScoreArr = [];
     for(let i = 0; i < this.keys.length;i++){
-      highScoreArr.push(JSON.parse(localStorage.getItem(this.keys[i])));
+      if(!(localStorage.getItem(this.keys[i]) === 'no one')){
+        highScoreArr.push(JSON.parse(localStorage.getItem(this.keys[i])));
+      }
+      else{
+        highScoreArr.push(localStorage.getItem(this.keys[i]));
+      }
     }
     return highScoreArr;
   };
