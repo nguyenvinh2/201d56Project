@@ -2,7 +2,7 @@
 
 function Game(board) {
   // eslint-disable-next-line no-undef
-  this.userScore = new Score(0, window.location.search.split('&')[0].split('=')[1].replace(/\+/g || 'Thanos', ' '));
+  this.userScore = new Score(0, window.location.search.split('&')[0].split('=')[1].replace(/\+/g, ' ') || 'Thanos');
   this.gameMode = gameDifficulty()[0];
   this.userSelects = [];
   this.cardsLeft = board.size * board.size;
