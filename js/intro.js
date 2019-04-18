@@ -72,5 +72,5 @@ function renderImage(card, container, index) {
 
 function retrieveCard() {
   // eslint-disable-next-line no-undef
-  return allCards[Math.floor(Math.random()*allCards.length)];
+  return allCards[Math.floor(Math.random()*10)];
 }

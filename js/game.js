@@ -2,7 +2,7 @@
 
 function Game(board) {
   // eslint-disable-next-line no-undef
-  this.userScore = new Score(0, window.location.search.split('&')[0].split('=')[1]);
+  this.userScore = new Score(0, window.location.search.split('&')[0].split('=')[1].replace(/\+/g, ' '));
   this.gameMode = gameDifficulty()[0];
   this.userSelects = [];
   this.cardsLeft = board.size * board.size;
@@ -12,6 +12,7 @@ function Game(board) {
     board.deck = allCards;
     board.makeShuffledArray();
     board.renderGameBoard();
+    board.setSize(this.gameMode);
   };
 
   this.executeOrder66 = function () {
@@ -115,10 +116,13 @@ function Game(board) {
 
   this.runWinEvents = function () {
     this.userScore.toLocalStorage();
-    var cards = document.getElementsByClassName('card');
-    for (let i = 0; i < cards.length; i++) {
-      cards[i].classList.add('finish');
-    }
+    document.getElementById('card-modal').addEventListener('click', () => {
+      var cards = document.getElementsByClassName('card');
+      for (let i = 0; i < cards.length; i++) {
+        cards[i].classList.add('finish');
+      }
+      document.body.style.backgroundImage = 'url(\'assets/fireworks.gif\')';
+    });
   };
 }
 
@@ -135,17 +139,8 @@ window.onload = function () {
 function gameDifficulty() {
   var modeArray = new Array(2);
   modeArray[0] = window.location.search.split('&')[1].split('=')[1];
-  switch (modeArray[0]) {
-  case 'easy':
-    modeArray[1] = 4;
-    return modeArray;
-  case 'medium':
-    modeArray[1] = 6;
-    return modeArray;
-  case 'hard':
-    modeArray[1] = 8;
-    return modeArray;
-  }
+  modeArray[1] = {'easy': 4, 'medium': 6, 'hard': 8}[modeArray[0]];
+  return modeArray;
 }
 
 //convoluted way to get JS to recognize the proper "this" object
@@ -187,6 +182,3 @@ document.getElementById('card-modal').addEventListener('click', () => {
   var getModal = document.getElementById('card-modal');
   hideModal(getModal);
 }, false);
-
-
-console.log(gaming.gameMode);

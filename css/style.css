@@ -1,5 +1,10 @@
-/* Header Section */
 
+body {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Header Section */
 header {
   display: flex;
   justify-content: space-between;
@@ -66,12 +71,6 @@ main {
   flex-wrap: wrap;
   justify-content: center;
 }
-
-/* * Cards array */ 
-/* #game-board-table {
-  display: cell;
-  border-collapse: separate;
-} */
 
 input[type=radio] {
   display: none;
