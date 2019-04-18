@@ -1,3 +1,9 @@
+
+body {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 /* Header Section */
 
 header {
