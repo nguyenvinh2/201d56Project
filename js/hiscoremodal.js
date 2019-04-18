@@ -34,7 +34,7 @@ var renderHiScores = function() {
   var keys = ['game_1st','game_2nd','game_3rd','game_4th','game_5th'];
   var scores = [];
   for (var i = 0; i < 5; i++) {
-    if (localStorage[keys[i]] && localStorage[keys[i]] !== 'no one') {
+    if (localStorage[keys[i]] && localStorage[keys[i]] !== 'Unclaimed') {
       scores.push(JSON.parse(localStorage[keys[i]]));
     } else {
       scores.push(null);
