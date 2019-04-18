@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/sound.css">
   <link rel="stylesheet" type="text/css" href="css/hiscoremodal.css">
+  <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
 </head>
 
 <body>
@@ -46,8 +47,13 @@
     </nav>
   </header>
   <main>
-    <div id='congrats'></div>
     <audio id="cardflipsfx" src="assets/audio/cardflipsfx.mp3" type="audio/mpeg" preload="auto" autobuffer></audio>
+    <div id="congrats">
+      <h4>Congratulations...You Won!</h4>
+      <p></p>
+      <p></p>
+      <button onclick="playAgain()">Play Again</button>
+    </div>
     <form id="game">
       <table id="game-board-table">
       </table>

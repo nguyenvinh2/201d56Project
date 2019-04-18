@@ -80,8 +80,8 @@ body {
 }
 
 main {
-  margin-top: 25px;
   padding-bottom: 50px;
+  margin-top: 25px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -89,6 +89,11 @@ main {
 
 input[type=radio] {
   display: none;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
 }
 /* ----------------- */
 
@@ -114,7 +119,7 @@ input[type=radio] {
   height: 100%;
   box-shadow: 0 8px 8px 0 rgba(0, 0, 0, .15);
   border-radius: 15px;
-  background-color: rgba(245, 245, 245);
+  background-color: rgba(245, 245, 245, 1);
   opacity: .85;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
@@ -180,6 +185,31 @@ input[type=radio] {
   margin: 5px;
 }
 
+#congrats {
+  display: none;
+  padding: 20px;
+  text-align: center;
+  height: auto;
+  width: inherit;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+}
+
+#congrats h4 {
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+#congrats p {
+  margin-bottom: 10px
+}
+
+#congrats button {
+  margin-top: 5px;
+}
+
 /* -------------------- */
 
 /* Intro Page */
@@ -205,6 +235,10 @@ input[type=radio] {
   background-color: cornflowerblue;
   color: white;
   padding: 25px;
+}
+
+.game {
+  width: auto;
 }
 
 h3{ 
@@ -240,7 +274,7 @@ h3{
   padding: 0;
 }
 
-#game-mode label {
+#game-mode label, button {
   background-color: greenyellow;
   color: darkblue;
   padding: 10px;

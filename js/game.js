@@ -122,7 +122,25 @@ function Game(board) {
         cards[i].classList.add('finish');
       }
       document.body.style.backgroundImage = 'url(\'assets/fireworks.gif\')';
+      this.createCongratMessage();
     });
+  };
+
+  this.createCongratMessage = function() {
+    var congratContent = document.getElementById('congrats');
+    var highScoreContent = congratContent.getElementsByTagName('p')[1];
+    var scoreContent = congratContent.getElementsByTagName('p')[0];
+    highScoreContent.innerHTML = '';
+    scoreContent.innerHTML = '';
+    var lowScore = this.userScore.readHighScores();
+    scoreContent.textContent = `Your final score is ${this.userScore.score}`;
+    if(this.userScore.score < lowScore[lowScore.length-1][1]) {
+      highScoreContent.innerHTML = 'You did not score high enought to make it to the Hall of Fame, though <i class="em em-anguished"></i>';
+    } else {
+      highScoreContent.innerHTML = 'You made it to the Hall of Fame. Click on High Scores to see your ranking! <i class="em em-sunglasses"></i>';
+    }
+    document.getElementsByTagName('main')[0].style.display = 'block';
+    congratContent.style.display = 'block';
   };
 }
 
@@ -170,6 +188,11 @@ function hideModal(getModal) {
   getModal.style.display = 'none';
 }
 
+// eslint-disable-next-line no-unused-vars
+function playAgain() {
+  location.reload();
+}
+
 function displayInfo() {
   var name = window.location.search.split('&')[0].split('=')[1];
   var appendName = document.getElementById('user-info').getElementsByTagName('p')[0];
@@ -182,3 +205,5 @@ document.getElementById('card-modal').addEventListener('click', () => {
   var getModal = document.getElementById('card-modal');
   hideModal(getModal);
 }, false);
+
+
