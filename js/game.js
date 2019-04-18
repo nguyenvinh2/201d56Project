@@ -29,6 +29,8 @@ function Game(board) {
         }
         this.userSelects = [];
       }
+      triggerEvents(false);
+      setTimeout(triggerEvents, 300, true);
       formReset();
     }
   };

@@ -43,7 +43,7 @@ var renderHiScores = function() {
   for (i = 0; i < 5; i++) {
     var newLI = document.createElement('li');
     if (scores[i]) {
-      newLI.textContent = `${scores[i][0]} ${scores[i][1]}`;
+      newLI.innerHTML = ` <p>${scores[i][0]}</p> <p id="right">${scores[i][1]}</p>`;
     }
     scoresListEl.appendChild(newLI);
   }
