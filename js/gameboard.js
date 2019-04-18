@@ -63,6 +63,26 @@ GameBoard.prototype.renderGameBoard = function () {
   }
 };
 
+GameBoard.prototype.setSize = function(mode) {
+
+  var cards = document.getElementsByClassName('card');
+
+  for (let i = 0; i < cards.length; i++) {
+    switch(mode) {
+    case 'easy':
+      break;
+    case 'medium':
+      cards[i].style.width = '100px';
+      cards[i].style.height = '100px';
+      break;
+    case 'hard':
+      cards[i].style.width = '65px';
+      cards[i].style.height = '65px';
+      break;
+    }
+  }
+};
+
 // Helper function
 // Returns a randomized array built from the input array
 // Fisher-Yates in-place array shuffle
