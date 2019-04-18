@@ -65,12 +65,6 @@ function Score(score,userName){
 
   //sets score values in localStorage
   this.toLocalStorage = function(){
-    //store scores
-    this.scoresArr = [];
-
-    //stores score, username to pass to localStorage
-    this.saveDataArr = [];//ensure array is empty
-
     //append current user and score
     this.saveDataArr.push(this.userName);
     this.saveDataArr.push(this.score);
