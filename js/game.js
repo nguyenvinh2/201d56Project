@@ -43,7 +43,7 @@ function Game(board) {
   this.matchSuccess = function (cardInput) {
     cardInput.map((element) => {
       if (!element.classList.contains('transform')) {
-        setTimeout(this.flipCard, 1000, element);
+        setTimeout(this.flipCard, 500, element);
       }
     });
     this.cardsLeft -= 2;
