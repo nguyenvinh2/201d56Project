@@ -23,7 +23,7 @@ function Game(board) {
       this.disableCheckBox(returnedOption);
       if (this.userSelects.length === 2) {
         if (this.userSelects['0'].value === this.userSelects['1'].value) {
-          this.matchSuccess(this.userSelects['0']);
+          this.matchSuccess(this.userSelects);
         } else {
           this.matchFailure(this.userSelects['0'], this.userSelects['1']);
         }
@@ -41,12 +41,17 @@ function Game(board) {
   };
 
   this.matchSuccess = function (cardInput) {
+    cardInput.map((element) => {
+      if (!element.classList.contains('transform')) {
+        setTimeout(this.flipCard, 500, element);
+      }
+    });
     this.cardsLeft -= 2;
     this.changeScore(true);
     displayInfo();
     // eslint-disable-next-line no-undef
     var cardObject = allCards.find((card) => {
-      if (cardInput.value === card.value.toString()) {
+      if (cardInput['0'].value === card.value.toString()) {
         return card;
       }
     });
@@ -199,8 +204,8 @@ function displayInfo() {
   var name = window.location.search.split('&')[0].split('=')[1];
   var appendName = document.getElementById('user-info').getElementsByTagName('p')[0];
   var appendScore = document.getElementById('user-info').getElementsByTagName('p')[1];
-  appendName.textContent = `Hi ${name.replace(/\+/g, ' ') || 'Thanos'}:`;
-  appendScore.textContent = `Points: ${gaming.userScore.score}`;
+  appendName.textContent = `Welcome ${name.replace(/\+/g, ' ') || 'Thanos'}!`;
+  appendScore.textContent = `Score: ${gaming.userScore.score}`;
 }
 
 document.getElementById('card-modal').addEventListener('click', () => {
