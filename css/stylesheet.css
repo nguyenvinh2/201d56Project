@@ -335,11 +335,12 @@ h3{
 .profile {
   background-color: white;
   width: 20vw;
-  height: 80vh;
+  height: 700px;
   text-align: left;
   margin-right: 20px;
   margin-left: 20px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .15);
+  overflow: scroll;
 }
 
 .profile img {
